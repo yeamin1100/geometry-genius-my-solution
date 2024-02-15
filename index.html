@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Flex & Grid</title>
+</head>
+
+<body class="p-5 bg-white">
+  <div class="flex flex-col md:flex-row gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 basis-9/12 gap-2">
+      <!-- Triangle Card -->
+      <div class="card w-88 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="./images/triangle.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 id="triangleName" class="card-title">Triangle</h2>
+          <p class="text-center text-1xl">Area = 0.5 X b X h</p>
+          <div class="">
+            <input id="triangle-base" class="w-20 text-2xl p-0.5 rounded-sm" type="text" placeholder="b">
+            <span class="mr-4 ml-2">cm</span>
+            <input id="triangle-height" class="w-20 text-2xl p-0.5 rounded-sm" type="text" name="" id="triangle-height"
+              placeholder="h">
+            <span>cm</span>
+          </div>
+          <div class="card-actions mt-5">
+            <button onclick="triangleCalculate()" class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!-- Rectangle! Card -->
+      <div class="card w-88 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="./images/rectangle.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Rectangle!</h2>
+          <p class="text-center text-1xl">Area (A) = w X I</p>
+          <div class="">
+            <input id="rectangle-lenth" class="w-20 text-2xl p-0.5 rounded-sm" type="text" placeholder="L">
+            <span class="mr-4 ml-2">cm</span>
+            <input class="w-20 text-2xl p-0.5 rounded-sm" type="text" name="" id="rectangle-width" placeholder="W">
+            <span>cm</span>
+          </div>
+          <div class="card-actions mt-5">
+            <button onclick="rectangleCalculation()" class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!-- Parallelogram! Card -->
+      <div class="card w-90 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="./images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Parallelogram!</h2>
+          <p class="text-center text-1xl">Area (A) = b X h</p>
+          <div class="">
+            <input id="parallelogram-base" class="w-20 text-2xl p-0.5 rounded-sm" type="text" placeholder="b">
+            <span class="mr-4 ml-2">cm</span>
+            <input class="w-20 text-2xl p-0.5 rounded-sm" type="text" name="" id="parallelogram-height" placeholder="h">
+            <span>cm</span>
+          </div>
+          <div class="card-actions mt-5">
+            <button onclick="parallelogramCalculation()" class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!-- 4th Card -->
+      <div class="card w-90 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="./images/rhombus.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Rhombus!</h2>
+          <p class="text-center text-1xl">Area (A) = 0.5 x d1 x d2</p>
+          <div class="">
+            <input id="triangle-base" class="w-20 text-2xl p-0.5 rounded-sm" type="text" placeholder="d1">
+            <span class="mr-4 ml-2">cm</span>
+            <input class="w-20 text-2xl p-0.5 rounded-sm" type="text" name="" id="triangle-height" placeholder="d2">
+            <span>cm</span>
+          </div>
+          <div class="card-actions mt-5">
+            <button class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!-- 5th Card -->
+      <div class="card w-90 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="./images/pentagon.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Pentagon</h2>
+          <p class="text-center text-1xl">Area (A) = 0.5 x p x b</p>
+          <div class="">
+            <input id="triangle-base" class="w-20 text-2xl p-0.5 rounded-sm" type="text" placeholder="p">
+            <span class="mr-4 ml-2">cm</span>
+            <input class="w-20 text-2xl p-0.5 rounded-sm" type="text" name="" id="triangle-height" placeholder="b">
+            <span>cm</span>
+          </div>
+          <div class="card-actions mt-5">
+            <button class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!-- 6th Card -->
+      <div class="card w-90 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="./images/ellipse.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Ellipse</h2>
+          <p class="text-center text-1xl">Area = π * a * b</p>
+          <div class="">
+            <input id="triangle-base" class="w-20 text-2xl p-0.5 rounded-sm" type="text" placeholder="a">
+            <span class="mr-4 ml-2">cm</span>
+            <input class="w-20 text-2xl p-0.5 rounded-sm" type="text" name="" id="triangle-height" placeholder="b">
+            <span>cm</span>
+          </div>
+          <div class="card-actions mt-5">
+            <button class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="basis-3/12">
+      <h1 class="text-3xl text-black ">Area calculation</h1>
+      <table class="table drop-shadow-m">
+        <!-- head -->
+        <thead>
+          <tr class="text-black">
+            <th>No</th>
+            <th>Name</th>
+            <th>Area Calculation</th>
+            <th>Convert</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="./js/commonFunction.js"></script>
+  <script src="./js/Triangle.js"></script>
+  <script src="./js/Rectangle.js"></script>
+  <script src="./js/Parallelogram.js"></script>
+</body>
+
+</html>
